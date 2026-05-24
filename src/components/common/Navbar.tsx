@@ -54,36 +54,49 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-xl md:text-2xl font-bold font-display gradient-text">
-              MovieBuff
-            </span>
-          </Link>
+        <div className="max-w-8xl mx-auto px-4 h-16 flex items-center justify-between">
+          {/* Logo & City Selector */}
+          <div className="flex items-center gap-4 shrink-0">
+            <Link to="/" className="flex items-center gap-2">
+              <img 
+                src="https://i.pinimgproxy.com/?url=aHR0cHM6Ly9jZG4taWNvbnMtcG5nLmZsYXRpY29uLmNvbS8yNTYvNDgzMS80ODMxMjAzLnBuZw==&ts=1779607348&sig=4d8f5baef3aec718629da8a9a0ff98e8d9a3157848f31d0eb53c714bd69afdb2"
+                alt="MovieBuff"
+                className="w-8 h-8 md:w-10 md:h-10"
+              />
+              <span className="text-xl md:text-2xl font-bold font-display gradient-text">
+                MovieBuff
+              </span>
+            </Link>
 
-          {/* City Selector - Center */}
-          <button
-            onClick={() => setShowCityModal(true)}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-primary/30 transition-colors text-sm"
-          >
-            <MapPin className="w-3.5 h-3.5 text-primary" />
-            <span className="text-zinc-300">
-              {selectedCity ? selectedCity.name : 'Select City'}
-            </span>
-            <ChevronDown className="w-3.5 h-3.5 text-zinc-500" />
-          </button>
+            <button
+              onClick={() => setShowCityModal(true)}
+              className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:border-primary/30 transition-colors"
+            >
+              <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
+              <div className="flex flex-col items-start">
+                <span className="text-sm font-medium text-zinc-200">
+                  {selectedCity ? selectedCity.name : 'Select City'}
+                </span>
+                <span className="text-xs text-zinc-500">
+                  {selectedCity ? selectedCity.name + ', ' + selectedCity.state : 'Choose a location'}
+                </span>
+              </div>
+            </button>
+          </div>
 
           {/* Right Actions */}
           <div className="flex items-center gap-2 md:gap-3">
-            {/* Search */}
-            <button
-              onClick={() => setSearchOpen(true)}
-              className="p-2 rounded-full hover:bg-white/5 transition-colors"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5 text-zinc-400" />
-            </button>
+              {/* Search Bar */}
+              <button
+                onClick={() => setSearchOpen(true)}
+                className="flex items-center gap-3 w-full sm:w-96 px-5 py-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 hover:bg-white/8 transition-all text-left"
+              >
+                <Search className="w-5 h-5 text-zinc-500" />
+                <span className="text-zinc-500 text-sm flex-1">Search movies, cinemas...</span>
+                <kbd className="hidden sm:flex items-center gap-0.5 px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] text-zinc-500">
+                  ⌘K
+                </kbd>
+              </button>
 
             {/* Notifications */}
             <button
