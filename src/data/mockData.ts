@@ -33,7 +33,7 @@ export const movies: Movie[] = [
     formats: ['2D', 'IMAX', '4DX'],
     duration: 150,
     releaseDate: '2026-05-14',
-    rating: { imdb: 0, rottenTomatoes: 0, userRating: 0 },
+    rating: { imdb: 8.2, rottenTomatoes: 88, userRating: 8.6 },
     certification: 'UA',
     cast: [
       { name: 'Suriya', role: 'Karuppasamy / Lawyer', imageUrl: 'https://cdn.district.in/movies-assets/images/cinema/Suriua-590f7ac0-de75-11ed-bea3-ef4efacaa437.jpg?im=Resize,width=184' },

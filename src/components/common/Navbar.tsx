@@ -59,9 +59,9 @@ export default function Navbar() {
           <div className="flex items-center gap-4 shrink-0">
             <Link to="/" className="flex items-center gap-2">
               <img 
-                src="https://i.pinimgproxy.com/?url=aHR0cHM6Ly9jZG4taWNvbnMtcG5nLmZsYXRpY29uLmNvbS8yNTYvNDgzMS80ODMxMjAzLnBuZw==&ts=1779607348&sig=4d8f5baef3aec718629da8a9a0ff98e8d9a3157848f31d0eb53c714bd69afdb2"
+                src="/cine2.png"
                 alt="MovieBuff"
-                className="w-8 h-8 md:w-10 md:h-10"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
               />
               <span className="text-xl md:text-2xl font-bold font-display gradient-text">
                 MovieBuff
